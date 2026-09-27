@@ -1,0 +1,22 @@
+.not-found {
+  padding: 140px 0;
+}
+
+.not-found-inner {
+  text-align: center;
+}
+
+.not-found-code {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 90px;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.not-found-inner p {
+  color: var(--gray-500);
+  margin-bottom: 24px;
+}

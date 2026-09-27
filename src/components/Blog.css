@@ -1,0 +1,120 @@
+.blog-subtitle {
+  color: var(--gray-500);
+  font-size: 14px;
+}
+
+.blog-filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  background: var(--gray-100);
+  color: var(--navy-900);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.filter-btn.filter-active,
+.filter-btn:hover {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.blog-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  background: var(--white);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(15, 42, 71, 0.18);
+}
+
+.blog-card-media {
+  overflow: hidden;
+}
+
+.blog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blog-card:hover img {
+  transform: scale(1.08);
+}
+
+.blog-card-body {
+  padding: 24px;
+}
+
+.blog-tag {
+  display: inline-block;
+  background: rgba(246, 127, 1, 0.12);
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.blog-card-body h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.blog-date {
+  display: block;
+  font-size: 12px;
+  color: var(--gray-500);
+  margin-bottom: 12px;
+}
+
+.blog-card-body p {
+  font-size: 13px;
+  color: var(--gray-500);
+  margin-bottom: 12px;
+}
+
+.read-more {
+  color: var(--orange);
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.read-more:hover {
+  transform: translateX(4px);
+}
+
+.blog-view-all {
+  text-align: center;
+  margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,80 @@
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.process-step {
+  position: relative;
+  text-align: center;
+  padding: 0 12px;
+}
+
+.process-number {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--orange);
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.process-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--navy-050);
+  font-size: 28px;
+  margin-bottom: 18px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.process-step:hover .process-icon {
+  transform: translateY(-6px) scale(1.05);
+  background: var(--orange);
+}
+
+.process-step h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.process-step p {
+  font-size: 13px;
+  color: var(--gray-500);
+  margin: 0;
+}
+
+/* Dotted line linking each step to the next, echoing the site-wide dot
+   motif while doubling as a "journey" visual cue. */
+.process-connector {
+  position: absolute;
+  top: 36px;
+  left: calc(50% + 46px);
+  width: calc(100% - 92px);
+  height: 2px;
+  background-image: radial-gradient(var(--orange) 1.5px, transparent 1.5px);
+  background-size: 10px 2px;
+  background-repeat: repeat-x;
+  opacity: 0.6;
+}
+
+@media (max-width: 900px) {
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 40px;
+  }
+  .process-connector {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}

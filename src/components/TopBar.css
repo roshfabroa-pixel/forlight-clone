@@ -1,0 +1,23 @@
+.topbar {
+  background: var(--navy-900);
+  color: var(--white);
+  font-size: 13px;
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  gap: 16px;
+}
+
+.topbar-center {
+  color: var(--orange);
+}
+
+@media (max-width: 700px) {
+  .topbar-center {
+    display: none;
+  }
+}

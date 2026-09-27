@@ -1,0 +1,31 @@
+.cta-banner-section {
+  background: var(--gray-200);
+}
+
+.cta-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 40px 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.cta-card h3 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.cta-card p {
+  color: var(--gray-500);
+  margin: 0;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}

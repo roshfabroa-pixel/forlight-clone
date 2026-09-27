@@ -1,0 +1,217 @@
+.hero {
+  position: relative;
+  min-height: 640px;
+  /* Plain block flow: .hero-content and .request-card must stack
+     vertically, not sit side by side, so this deliberately isn't a flex
+     row. .hero-content's own top padding does the vertical centering. */
+  overflow: visible; /* let the request card spill past the section edge */
+  padding-bottom: 90px;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden; /* clips the zooming background so it never spills past the hero */
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  /* Slow "Ken Burns" drift: a barely-perceptible zoom that keeps the
+     hero from feeling like a static screenshot without being distracting
+     enough to compete with the headline. */
+  animation: hero-zoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(15, 42, 71, 0.88) 0%,
+    rgba(15, 42, 71, 0.55) 55%,
+    rgba(15, 42, 71, 0.35) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+  max-width: 760px;
+  padding-top: 70px;
+  padding-bottom: 60px;
+}
+
+/* Entrance animation for hero content only — it's above the fold, so it
+   plays on page load rather than waiting for a scroll trigger. Each
+   piece is staggered with animation-delay so the eyebrow, headline,
+   copy and buttons arrive in reading order instead of all at once. */
+.hero-in {
+  opacity: 0;
+  animation: hero-rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-in-1 { animation-delay: 0.1s; }
+.hero-in-2 { animation-delay: 0.25s; }
+.hero-in-3 { animation-delay: 0.4s; }
+.hero-in-4 { animation-delay: 0.55s; }
+.hero-in-5 { animation-delay: 0.7s; }
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.eyebrow-light {
+  color: var(--orange);
+}
+
+.hero-title {
+  color: var(--white);
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+
+.hero-text {
+  color: #e2e2e2;
+  font-size: 16px;
+  max-width: 620px;
+  margin-bottom: 28px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-outline-light {
+  border: 2px solid var(--white);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 26px;
+  border-radius: 4px;
+}
+.btn-outline-light:hover {
+  background: var(--white);
+  color: var(--navy-900);
+  transform: translateY(-2px);
+}
+
+.hero-arrow {
+  position: absolute;
+  top: 45%;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-arrow:hover {
+  background: var(--orange);
+  transform: scale(1.08);
+}
+.hero-arrow-left {
+  left: 24px;
+}
+.hero-arrow-right {
+  right: 24px;
+}
+
+/* The floating card: positioned with a big negative margin so its top
+   half sits over the hero photo and its bottom half sits on the page
+   background below. */
+.request-card {
+  position: relative;
+  z-index: 3;
+  margin-top: -40px;
+}
+
+.request-card-inner {
+  background: var(--navy-800);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.request-title {
+  color: var(--white);
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.request-form {
+  display: flex;
+  flex: 1;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.request-form input {
+  flex: 1;
+  min-width: 140px;
+  padding: 12px 14px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.request-form input:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(246, 127, 1, 0.2);
+}
+
+.request-form button {
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .hero-title {
+    font-size: 36px;
+  }
+  .hero {
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+  .hero-arrow {
+    display: none;
+  }
+  .request-card-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

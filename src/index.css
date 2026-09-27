@@ -1,0 +1,185 @@
+:root {
+  /* Color system: navy family for structure/trust, one orange accent for
+     every actionable/attention element. Three navy shades give depth
+     without introducing new hues. */
+  --navy-900: #0f2a47;
+  --navy-800: #14324f;
+  --navy-700: #1d3e63;
+  --navy-050: #eef2f6;
+  --gray-100: #f4f5f7;
+  --gray-200: #e0e0e0;
+  --gray-500: #6b7280;
+  --white: #ffffff;
+  --orange: #f67f01;
+  --orange-dark: #d96e00;
+  --text-body: #333333;
+
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Montserrat", sans-serif;
+
+  --container-width: 1180px;
+  --radius: 10px;
+  --shadow-card: 0 10px 30px rgba(15, 42, 71, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-body);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--navy-900);
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: var(--font-heading);
+  cursor: pointer;
+  border: none;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  color: var(--orange);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 14px 28px;
+  border-radius: 4px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(246, 127, 1, 0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--navy-900);
+  border: 2px solid var(--navy-900);
+}
+.btn-outline:hover {
+  background: var(--navy-900);
+  color: var(--white);
+}
+
+.btn-navy {
+  background: var(--navy-700);
+  color: var(--white);
+}
+.btn-navy:hover {
+  background: var(--navy-900);
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.section-head {
+  max-width: 620px;
+  margin-bottom: 48px;
+}
+
+.section-head.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Dotted pattern decoration used to echo the original's grid-of-dots
+   accents without needing an image asset. */
+.dot-pattern {
+  --dot-color: rgba(246, 127, 1, 0.55);
+  background-image: radial-gradient(var(--dot-color) 2px, transparent 2px);
+  background-size: 14px 14px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 60px 0;
+  }
+}
+
+/* Scroll-reveal primitive used by <Reveal>. Kept as plain opacity+transform
+   so it's cheap to animate (no layout thrash) on low-power devices. */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

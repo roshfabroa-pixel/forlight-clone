@@ -1,0 +1,47 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-media img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-media:hover img {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(15, 42, 71, 0.2);
+}
+
+.about-copy h2 {
+  font-size: 32px;
+  margin-bottom: 18px;
+}
+
+.about-copy p {
+  color: var(--gray-500);
+  font-size: 15px;
+}
+
+.signature {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 34px;
+  color: var(--navy-900);
+  margin: 20px 0 2px;
+}
+
+.signature-caption {
+  font-size: 13px;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
