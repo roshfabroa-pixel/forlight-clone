@@ -21,3 +21,15 @@
     display: none;
   }
 }
+
+/* Below ~480px, even the address wraps awkwardly next to the phone
+   number and eats vertical space before any real content. Phone is the
+   one actionable item here, so it's the one that stays. */
+@media (max-width: 480px) {
+  .topbar-inner {
+    justify-content: center;
+  }
+  .topbar-item:first-child {
+    display: none;
+  }
+}

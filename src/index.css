@@ -185,7 +185,11 @@ button {
   will-change: opacity, transform;
 }
 
-.reveal-in {
+/* Compound selector (not just .reveal-in) deliberately outranks .reveal
+   on specificity — equal-specificity same-property rules can get
+   reordered by production CSS minifiers, which was silently leaving
+   revealed content stuck at opacity:0 on some sections in prod. */
+.reveal.reveal-in {
   opacity: 1;
   transform: none;
 }

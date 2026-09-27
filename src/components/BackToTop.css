@@ -19,7 +19,9 @@
   z-index: 60;
 }
 
-.back-to-top-visible {
+/* Compound selector, same reasoning as .reveal.reveal-in: guarantees
+   this beats the base opacity:0 rule regardless of minifier rule order. */
+.back-to-top.back-to-top-visible {
   opacity: 1;
   transform: none;
   pointer-events: auto;
@@ -28,4 +30,14 @@
 .back-to-top:hover {
   background: var(--orange-dark);
   transform: translateY(-3px);
+}
+
+@media (max-width: 700px) {
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    right: 16px;
+    bottom: 16px;
+    font-size: 15px;
+  }
 }
