@@ -137,7 +137,7 @@
 
 .hero-arrow:hover {
   background: var(--orange);
-  color: var(--bg);
+  color: var(--white);
   transform: scale(1.08);
 }
 .hero-arrow-left {

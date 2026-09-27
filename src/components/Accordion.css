@@ -53,7 +53,7 @@
 
 .accordion-open .accordion-icon {
   background: var(--orange);
-  color: var(--bg);
+  color: var(--white);
   transform: rotate(180deg);
 }
 

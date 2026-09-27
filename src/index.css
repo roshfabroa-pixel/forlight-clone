@@ -1,40 +1,39 @@
 :root {
-  /* --- Bold & modern redesign ---
-     Near-black base instead of white, one electric-lime accent instead
-     of orange, glass panels instead of flat white cards. Token NAMES are
-     kept from the original build (--orange, --navy-900, etc.) even
-     though their meaning has shifted — that's deliberate: every
-     component already references these names, so re-pointing the
-     values here cascades the whole redesign without touching 50+ call
-     sites individually. */
-  --bg: #08090c;            /* page background: near-black, not navy */
-  --bg-alt: #101318;        /* alternate section background */
-  --surface: rgba(255, 255, 255, 0.045); /* glass card fill */
-  --surface-border: rgba(255, 255, 255, 0.1);
+  /* --- Brand palette, sampled from the Forlight logo ---
+     Deep navy blue, warm gold/orange, and a lighter sky blue, back on a
+     clean white/light base. Token NAMES stay as they were through the
+     dark-theme experiment (--orange, --navy-900, etc.) — only the
+     VALUES change here, which cascades through every component again
+     without touching 50+ call sites. */
+  --bg: #ffffff;             /* page background */
+  --bg-alt: #f2f7fc;         /* alternate section background, faint sky-blue tint */
+  --surface: #ffffff;        /* card fill (solid on this light theme, glass on white doesn't read) */
+  --surface-border: #e3eaf2;
 
-  --ink: #f3f5f1;           /* primary light text */
-  --ink-muted: #97a19c;     /* secondary/paragraph text */
+  --ink: #0f2745;            /* primary text: near-black navy for max contrast */
+  --ink-muted: #5b6b7c;      /* secondary/paragraph text */
 
-  --navy-900: #08090c;      /* darkest chrome (footer, topbar) */
-  --navy-800: #14171d;      /* request-card panel */
-  --navy-700: #1a1f27;      /* dark accent sections (Services) */
-  --navy-050: rgba(255, 255, 255, 0.08); /* icon-chip fill on dark */
+  --navy-900: #0f2745;       /* darkest chrome (footer, topbar) */
+  --navy-800: #16345c;       /* request-card panel */
+  --navy-700: #1d6bb8;       /* dark accent sections (Services) — logo's mid blue */
+  --navy-050: #e8f2fb;       /* icon-chip fill, faint sky-blue */
 
-  --gray-100: #10131a;      /* alt-dark section bg (was light gray) */
-  --gray-200: rgba(255, 255, 255, 0.12); /* subtle borders/bands */
-  --gray-500: #97a19c;      /* body copy on dark */
-  --white: #f3f5f1;         /* stays "light text/border", not a bg fill */
+  --gray-100: #f2f7fc;       /* alt-light section bg */
+  --gray-200: #e3eaf2;       /* subtle borders/bands */
+  --gray-500: #5b6b7c;       /* body copy */
+  --white: #ffffff;          /* light text/border on dark sections */
 
-  --orange: #c6ff4d;        /* accent: electric lime, not orange */
-  --orange-dark: #a3e62e;
-  --text-body: #d8ddd6;
+  --orange: #f5a623;         /* accent: logo's gold/orange */
+  --orange-dark: #d98e12;
+  --sky: #3fa9e0;            /* logo's lighter blue, for secondary accents */
+  --text-body: #33404d;
 
   --font-heading: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
 
   --container-width: 1240px;
   --radius: 14px;
-  --shadow-card: 0 20px 50px rgba(0, 0, 0, 0.45);
+  --shadow-card: 0 16px 40px rgba(15, 39, 69, 0.12);
 }
 
 * {
@@ -112,12 +111,12 @@ button {
 
 .btn-primary {
   background: var(--orange);
-  color: var(--bg);
+  color: var(--white);
 }
 .btn-primary:hover {
   background: var(--orange-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(198, 255, 77, 0.3);
+  box-shadow: 0 8px 24px rgba(245, 166, 35, 0.35);
 }
 
 .btn-outline {
@@ -127,7 +126,7 @@ button {
 }
 .btn-outline:hover {
   background: var(--ink);
-  color: var(--bg);
+  color: var(--white);
   border-color: var(--ink);
 }
 
@@ -156,9 +155,9 @@ button {
 }
 
 /* Dotted pattern decoration — now lime dots on dark, echoing the accent
-   instead of matching the old orange-on-light scheme. */
+   accent, back to gold to match the brand palette. */
 .dot-pattern {
-  --dot-color: rgba(198, 255, 77, 0.4);
+  --dot-color: rgba(245, 166, 35, 0.55);
   background-image: radial-gradient(var(--dot-color) 2px, transparent 2px);
   background-size: 14px 14px;
 }

@@ -42,7 +42,7 @@
 
 .lightbox-close:hover {
   background: var(--orange);
-  color: var(--bg);
+  color: var(--white);
 }
 
 .lightbox-nav {
@@ -63,7 +63,7 @@
 
 .lightbox-nav:hover {
   background: var(--orange);
-  color: var(--bg);
+  color: var(--white);
 }
 
 .lightbox-prev {
