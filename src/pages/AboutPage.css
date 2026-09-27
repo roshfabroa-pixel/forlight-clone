@@ -30,7 +30,10 @@
 }
 
 .value-card {
-  background: var(--white);
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--surface-border);
   border-radius: var(--radius);
   padding: 34px 28px;
   text-align: center;

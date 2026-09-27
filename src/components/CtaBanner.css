@@ -3,7 +3,10 @@
 }
 
 .cta-card {
-  background: var(--white);
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--surface-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
   padding: 40px 44px;

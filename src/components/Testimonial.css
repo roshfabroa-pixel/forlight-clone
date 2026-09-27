@@ -5,7 +5,7 @@
 
 .quote {
   font-size: 18px;
-  color: var(--navy-900);
+  color: var(--ink);
   font-style: italic;
   margin-bottom: 24px;
 }

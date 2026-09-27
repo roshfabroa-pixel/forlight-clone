@@ -13,7 +13,7 @@
 
 .filter-btn {
   background: var(--gray-100);
-  color: var(--navy-900);
+  color: var(--ink);
   font-size: 13px;
   font-weight: 600;
   padding: 10px 20px;
@@ -24,7 +24,7 @@
 .filter-btn.filter-active,
 .filter-btn:hover {
   background: var(--orange);
-  color: var(--white);
+  color: var(--bg);
 }
 
 .blog-grid {
@@ -37,7 +37,10 @@
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-card);
-  background: var(--white);
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--surface-border);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 

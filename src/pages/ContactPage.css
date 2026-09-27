@@ -6,7 +6,10 @@
 }
 
 .contact-form-card {
-  background: var(--white);
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--surface-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
   padding: 40px;
@@ -47,7 +50,7 @@
   display: block;
   font-size: 13px;
   font-weight: 600;
-  color: var(--navy-900);
+  color: var(--ink);
   margin-bottom: 6px;
 }
 
@@ -61,7 +64,10 @@
   font-family: var(--font-body);
   font-size: 14px;
   color: var(--text-body);
-  background: var(--white);
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--surface-border);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -100,7 +106,7 @@
   height: 56px;
   border-radius: 50%;
   background: var(--orange);
-  color: var(--white);
+  color: var(--bg);
   font-size: 26px;
   margin-bottom: 16px;
 }
@@ -125,7 +131,10 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  background: var(--white);
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--surface-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
   padding: 20px 22px;
@@ -177,12 +186,15 @@
   position: absolute;
   bottom: 12px;
   left: 12px;
-  background: var(--white);
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--surface-border);
   padding: 6px 12px;
   border-radius: 6px;
   font-size: 12px;
   font-weight: 600;
-  color: var(--navy-900);
+  color: var(--ink);
   box-shadow: var(--shadow-card);
 }
 

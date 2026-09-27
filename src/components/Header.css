@@ -1,5 +1,8 @@
 .header {
-  background: var(--white);
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--surface-border);
   box-shadow: 0 2px 12px rgba(15, 42, 71, 0.06);
   position: sticky;
   top: 0;
@@ -49,7 +52,7 @@
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 20px;
-  color: var(--navy-900);
+  color: var(--ink);
   line-height: 1.1;
   display: flex;
   flex-direction: column;
@@ -76,7 +79,7 @@
 
 .nav a {
   position: relative;
-  color: var(--navy-900);
+  color: var(--ink);
   padding-bottom: 4px;
   transition: color 0.15s;
 }
@@ -124,7 +127,7 @@
 .nav-toggle span {
   display: block;
   height: 2px;
-  background: var(--navy-900);
+  background: var(--ink);
   border-radius: 2px;
   transition: transform 0.25s ease, opacity 0.2s ease;
 }
@@ -146,7 +149,10 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--white);
+    background: var(--surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--surface-border);
     flex-direction: column;
     gap: 0;
     max-height: 0;

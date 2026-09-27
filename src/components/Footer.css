@@ -45,6 +45,7 @@
 
 .footer-social a:hover {
   background: var(--orange);
+  color: var(--bg);
 }
 
 .footer-col h4 {

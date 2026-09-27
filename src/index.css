@@ -1,25 +1,40 @@
 :root {
-  /* Color system: navy family for structure/trust, one orange accent for
-     every actionable/attention element. Three navy shades give depth
-     without introducing new hues. */
-  --navy-900: #0f2a47;
-  --navy-800: #14324f;
-  --navy-700: #1d3e63;
-  --navy-050: #eef2f6;
-  --gray-100: #f4f5f7;
-  --gray-200: #e0e0e0;
-  --gray-500: #6b7280;
-  --white: #ffffff;
-  --orange: #f67f01;
-  --orange-dark: #d96e00;
-  --text-body: #333333;
+  /* --- Bold & modern redesign ---
+     Near-black base instead of white, one electric-lime accent instead
+     of orange, glass panels instead of flat white cards. Token NAMES are
+     kept from the original build (--orange, --navy-900, etc.) even
+     though their meaning has shifted — that's deliberate: every
+     component already references these names, so re-pointing the
+     values here cascades the whole redesign without touching 50+ call
+     sites individually. */
+  --bg: #08090c;            /* page background: near-black, not navy */
+  --bg-alt: #101318;        /* alternate section background */
+  --surface: rgba(255, 255, 255, 0.045); /* glass card fill */
+  --surface-border: rgba(255, 255, 255, 0.1);
 
-  --font-heading: "Poppins", sans-serif;
-  --font-body: "Montserrat", sans-serif;
+  --ink: #f3f5f1;           /* primary light text */
+  --ink-muted: #97a19c;     /* secondary/paragraph text */
 
-  --container-width: 1180px;
-  --radius: 10px;
-  --shadow-card: 0 10px 30px rgba(15, 42, 71, 0.12);
+  --navy-900: #08090c;      /* darkest chrome (footer, topbar) */
+  --navy-800: #14171d;      /* request-card panel */
+  --navy-700: #1a1f27;      /* dark accent sections (Services) */
+  --navy-050: rgba(255, 255, 255, 0.08); /* icon-chip fill on dark */
+
+  --gray-100: #10131a;      /* alt-dark section bg (was light gray) */
+  --gray-200: rgba(255, 255, 255, 0.12); /* subtle borders/bands */
+  --gray-500: #97a19c;      /* body copy on dark */
+  --white: #f3f5f1;         /* stays "light text/border", not a bg fill */
+
+  --orange: #c6ff4d;        /* accent: electric lime, not orange */
+  --orange-dark: #a3e62e;
+  --text-body: #d8ddd6;
+
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --container-width: 1240px;
+  --radius: 14px;
+  --shadow-card: 0 20px 50px rgba(0, 0, 0, 0.45);
 }
 
 * {
@@ -33,16 +48,17 @@ html {
 body {
   margin: 0;
   font-family: var(--font-body);
-  color: var(--text-body);
-  background: var(--white);
+  color: var(--ink-muted);
+  background: var(--bg);
   line-height: 1.6;
 }
 
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
-  font-weight: 800;
-  color: var(--navy-900);
-  line-height: 1.2;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   margin: 0 0 16px;
 }
 
@@ -76,8 +92,8 @@ button {
   color: var(--orange);
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 1.5px;
+  font-size: 13px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   display: inline-block;
   margin-bottom: 10px;
@@ -90,40 +106,42 @@ button {
   font-weight: 600;
   font-size: 14px;
   padding: 14px 28px;
-  border-radius: 4px;
+  border-radius: 100px;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
 .btn-primary {
   background: var(--orange);
-  color: var(--white);
+  color: var(--bg);
 }
 .btn-primary:hover {
   background: var(--orange-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(246, 127, 1, 0.35);
+  box-shadow: 0 8px 24px rgba(198, 255, 77, 0.3);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--navy-900);
-  border: 2px solid var(--navy-900);
+  color: var(--ink);
+  border: 2px solid var(--surface-border);
 }
 .btn-outline:hover {
-  background: var(--navy-900);
-  color: var(--white);
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
 }
 
 .btn-navy {
   background: var(--navy-700);
   color: var(--white);
+  border: 1px solid var(--surface-border);
 }
 .btn-navy:hover {
   background: var(--navy-900);
 }
 
 .section {
-  padding: 90px 0;
+  padding: 100px 0;
 }
 
 .section-head {
@@ -137,10 +155,10 @@ button {
   text-align: center;
 }
 
-/* Dotted pattern decoration used to echo the original's grid-of-dots
-   accents without needing an image asset. */
+/* Dotted pattern decoration — now lime dots on dark, echoing the accent
+   instead of matching the old orange-on-light scheme. */
 .dot-pattern {
-  --dot-color: rgba(246, 127, 1, 0.55);
+  --dot-color: rgba(198, 255, 77, 0.4);
   background-image: radial-gradient(var(--dot-color) 2px, transparent 2px);
   background-size: 14px 14px;
 }
