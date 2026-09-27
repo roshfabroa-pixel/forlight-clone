@@ -7,6 +7,7 @@ import GalleryPage from './pages/GalleryPage.jsx'
 import BlogPage from './pages/BlogPage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx'
+import AdminPage from './pages/AdminPage.jsx'
 
 // Every nav link now points at a real route instead of a same-page
 // anchor. <Layout> holds the header/footer once; <Routes> swaps only
@@ -26,6 +27,10 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
+        {/* Deliberately outside <Layout> — no public nav/footer chrome
+            around the admin tool, and Supabase Auth (not the URL) is
+            the actual access boundary. */}
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </BrowserRouter>
   )
